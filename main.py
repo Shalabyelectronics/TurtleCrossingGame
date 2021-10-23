@@ -21,6 +21,7 @@ while game_on:
     if player.ycor() > 250:
         levels.increase_level()
         levels.level_update()
+        player.reset_player()
 
 
 screen.exitonclick()
