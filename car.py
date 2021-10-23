@@ -20,14 +20,14 @@ class Car(turtle.Turtle):
             y_position -= 20
 
     def create_car(self):
+        color = random.randint(150, 200)
         for pos in range(len(self.position)):
-            color = random.randint(0, 255)
-            car = turtle.Turtle()
-            car.shape("square")
-            car.penup()
-            car.color((color, color, color))
-            car.goto(self.position[pos])
-            self.segments.append(car)
+            car_seg = turtle.Turtle()
+            car_seg.shape("square")
+            car_seg.penup()
+            car_seg.color((color, color, color))
+            car_seg.goto(self.position[pos])
+            self.segments.append(car_seg)
 
     def move_car(self):
         for seg in range(len(self.segments) - 1, 0, -1):

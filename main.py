@@ -10,7 +10,8 @@ screen.title("Turtle Crossing Game")
 screen.tracer(0)
 player = Player()
 levels = Levels()
-car = Car()
+car1 = Car()
+car2 = Car()
 
 screen.listen()
 screen.onkey(key="Up", fun=player.move_up)
@@ -20,7 +21,8 @@ game_on = True
 while game_on:
     time.sleep(0.1)
     screen.update()
-    car.move_car()
+    car1.move_car()
+    car2.move_car()
     if player.ycor() > 250:
         levels.increase_level()
         levels.level_update()
