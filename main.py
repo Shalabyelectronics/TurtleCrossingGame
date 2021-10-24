@@ -13,8 +13,6 @@ player = Player()
 levels = Levels()
 cars = []
 
-
-
 screen.listen()
 screen.onkey(key="Up", fun=player.move_up)
 
@@ -23,7 +21,7 @@ for _ in range(10):
     car = Car()
     cars.append(car)
 while game_on:
-    time.sleep(0.1)
+    time.sleep(levels.speed_cars)
     screen.update()
     for car in cars:
         car.move_car()
@@ -32,11 +30,14 @@ while game_on:
                 y_position = random.randint(-230, 250)
                 x_position = random.randint(500, 2000)
                 car.segments[0].goto(x_position, y_position)
-            if player.distance(car_seg) < 17:
+            if player.distance(car_seg) < 14:
+                levels.game_over()
                 game_on = False
     if player.ycor() > 250:
         levels.increase_level()
         levels.level_update()
         player.reset_player()
+        levels.increase_speed()
+
 
 screen.exitonclick()

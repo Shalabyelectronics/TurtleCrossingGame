@@ -9,6 +9,7 @@ class Levels(Turtle):
         self.level = 0
         self.goto(-400, 260)
         self.level_update()
+        self.speed_cars = 0.2
 
     def level_update(self):
         self.clear()
@@ -16,3 +17,11 @@ class Levels(Turtle):
 
     def increase_level(self):
         self.level += 1
+
+    def increase_speed(self):
+        self.speed_cars *= 0.8
+
+    def game_over(self):
+        self.goto(-50, 200)
+        self.write("Game Over", align="center", font=("Courier", 50, "bold"))
+
