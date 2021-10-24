@@ -6,7 +6,6 @@ class Car(turtle.Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
-        turtle.colormode(255)
         self.position = []
         self.generate_position()
         self.segments = []
@@ -15,18 +14,17 @@ class Car(turtle.Turtle):
 
     def generate_position(self):
         y_position = random.randint(-230, 250)
-        x_position = random.randint(500, 1000)
+        x_position = random.randint(500, 600)
         for pos in range(3):
             self.position.append((x_position, y_position))
             y_position -= 20
 
     def create_car(self):
-        color = random.randint(150, 200)
         for pos in range(len(self.position)):
             car_seg = turtle.Turtle()
             car_seg.shape("square")
             car_seg.penup()
-            car_seg.color((color, color, color))
+            self.color("black")
             car_seg.goto(self.position[pos])
             self.segments.append(car_seg)
 
