@@ -14,9 +14,10 @@ class Car(turtle.Turtle):
         self.car_position = self.segments[0]
 
     def generate_position(self):
-        y_position = random.randint(-250, 250)
+        y_position = random.randint(-230, 250)
+        x_position = random.randint(500, 1000)
         for pos in range(3):
-            self.position.append((500, y_position))
+            self.position.append((x_position, y_position))
             y_position -= 20
 
     def create_car(self):
