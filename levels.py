@@ -6,7 +6,7 @@ class Levels(Turtle):
         super().__init__()
         self.hideturtle()
         self.penup()
-        self.level = 0
+        self.level = 1
         self.goto(-400, 260)
         self.level_update()
         self.speed_cars = 0.2
