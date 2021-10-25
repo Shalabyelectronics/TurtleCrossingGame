@@ -15,6 +15,7 @@ cars = []
 
 screen.listen()
 screen.onkey(key="Up", fun=player.move_up)
+screen.onkey(key="Down", fun=player.move_down)
 
 game_on = True
 for _ in range(10):
