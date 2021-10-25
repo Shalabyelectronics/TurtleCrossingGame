@@ -2,6 +2,8 @@ import turtle
 import random
 
 
+# COLORS = pass
+
 class Car(turtle.Turtle):
     def __init__(self):
         super().__init__()
@@ -9,7 +11,10 @@ class Car(turtle.Turtle):
         self.position = []
         self.generate_position()
         self.segments = []
-        self.create_car()
+        self.car_colors = ['yellow', 'gold', 'orange', 'red', 'violet',
+                           'magenta', 'purple', 'navy', 'blue', 'maroon', 'cyan', 'turquoise', 'green', 'chocolate', 'brown', 'black', 'gray']
+        self.pick_color = random.choice(self.car_colors)
+        self.create_car_segments(color=self.pick_color)
         self.car_position = self.segments[0]
 
     def generate_position(self):
@@ -19,14 +24,15 @@ class Car(turtle.Turtle):
             self.position.append((x_position, y_position))
             y_position -= 20
 
-    def create_car(self):
+    def create_car_segments(self, color):
         for pos in range(len(self.position)):
             car_seg = turtle.Turtle()
             car_seg.shape("square")
             car_seg.penup()
-            self.color("black")
             car_seg.goto(self.position[pos])
             self.segments.append(car_seg)
+        for seg in self.segments:
+            seg.color(color)
 
     def move_car(self):
         for seg in range(len(self.segments) - 1, 0, -1):
