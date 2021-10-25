@@ -5,7 +5,7 @@ class Player(Turtle):
     def __init__(self, x_pos, color):
         super().__init__()
         self.shape("turtle")
-        self.shapesize(1)
+        self.shapesize(1.5)
         self.color(color)
         self.setheading(90)
         self.penup()
