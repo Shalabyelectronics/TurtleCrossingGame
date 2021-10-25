@@ -32,7 +32,7 @@ while game_on:
                 y_position = random.randint(-230, 250)
                 x_position = random.randint(500, 2000)
                 car.segments[0].goto(x_position, y_position)
-            if player.distance(car_seg) < 8 or asma.distance(car_seg) < 8:
+            if player.distance(car_seg) < 11 or asma.distance(car_seg) < 11:
                 levels.game_over()
                 game_on = False
     if player.ycor() > 250:

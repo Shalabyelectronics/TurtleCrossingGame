@@ -22,6 +22,6 @@ class Levels(Turtle):
         self.speed_cars *= 0.8
 
     def game_over(self):
-        self.goto(-50, 200)
+        self.goto(0, 0)
         self.write("Game Over", align="center", font=("Courier", 50, "bold"))
 
